@@ -5,7 +5,7 @@ using FallenWing.Module.FSM;
 namespace FallenWing.Behavior.NPC.Minion
 {
     [RequireComponent(typeof(Animator))]
-    [RequireComponent(typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Rigidbody))]
     public class MinionController : FSM_Factory<MinionController.MinionState, MinionController>
     {
         public enum MinionState
@@ -16,12 +16,12 @@ namespace FallenWing.Behavior.NPC.Minion
             Stunned,
             Attack
         }
-        private Rigidbody2D rb;
+        private Rigidbody rb;
         private Animator animator;
 
         private void Awake()
         {
-            rb = GetComponent<Rigidbody2D>();
+            rb = GetComponent<Rigidbody>();
             animator = GetComponent<Animator>();
 
             InitializeStates();
@@ -41,168 +41,5 @@ namespace FallenWing.Behavior.NPC.Minion
         {
             TransitionToState(state);
         }
-
     }
-
-    public class FSM_MinionIdle : FSM_BaseState<MinionController.MinionState, MinionController>
-    {
-        public FSM_MinionIdle(MinionController.MinionState stateKey, MinionController controller) : base(stateKey, controller)
-        {
-        }
-
-        public override void DoOnEnterState()
-        {
-
-        }
-
-        public override void DoOnExitState()
-        {
-
-        }
-
-        public override void DoOnStateFixedUpdate()
-        {
-
-        }
-
-        public override void DoOnStateUpdate()
-        {
-
-        }
-
-        public override MinionController.MinionState NextState()
-        {
-            return MinionController.MinionState.Idle;
-        }
-    }
-    
-    public class FSM_MinionChase : FSM_BaseState<MinionController.MinionState, MinionController>
-    {
-        public FSM_MinionChase(MinionController.MinionState stateKey, MinionController controller) : base(stateKey, controller)
-        {
-        }
-
-        public override void DoOnEnterState()
-        {
-
-        }
-
-        public override void DoOnExitState()
-        {
-
-        }
-
-        public override void DoOnStateFixedUpdate()
-        {
-
-        }
-
-        public override void DoOnStateUpdate()
-        {
-
-        }
-
-        public override MinionController.MinionState NextState()
-        {
-            return MinionController.MinionState.Idle;
-        }
-    } 
-    public class FSM_MinionAttack : FSM_BaseState<MinionController.MinionState, MinionController>
-    {
-        public FSM_MinionAttack(MinionController.MinionState stateKey, MinionController controller) : base(stateKey, controller)
-        {
-        }
-
-        public override void DoOnEnterState()
-        {
-
-        }
-
-        public override void DoOnExitState()
-        {
-
-        }
-
-        public override void DoOnStateFixedUpdate()
-        {
-
-        }
-
-        public override void DoOnStateUpdate()
-        {
-
-        }
-
-        public override MinionController.MinionState NextState()
-        {
-            return MinionController.MinionState.Idle;
-        }
-    }  
-    
-    public class FSM_MinionPatrol : FSM_BaseState<MinionController.MinionState, MinionController>
-    {
-        public FSM_MinionPatrol(MinionController.MinionState stateKey, MinionController controller) : base(stateKey, controller)
-        {
-        }
-
-        public override void DoOnEnterState()
-        {
-
-        }
-
-        public override void DoOnExitState()
-        {
-
-        }
-
-        public override void DoOnStateFixedUpdate()
-        {
-
-        }
-
-        public override void DoOnStateUpdate()
-        {
-
-        }
-
-        public override MinionController.MinionState NextState()
-        {
-            return MinionController.MinionState.Idle;
-        }
-    }
-    
-    public class FSM_MinionStunned : FSM_BaseState<MinionController.MinionState, MinionController>
-    {
-        public FSM_MinionStunned(MinionController.MinionState stateKey, MinionController controller) : base(stateKey, controller)
-        {
-        }
-
-        public override void DoOnEnterState()
-        {
-
-        }
-
-        public override void DoOnExitState()
-        {
-
-        }
-
-        public override void DoOnStateFixedUpdate()
-        {
-
-        }
-
-        public override void DoOnStateUpdate()
-        {
-
-        }
-
-        public override MinionController.MinionState NextState()
-        {
-            return MinionController.MinionState.Idle;
-        }
-    }
-
-
-
 }
