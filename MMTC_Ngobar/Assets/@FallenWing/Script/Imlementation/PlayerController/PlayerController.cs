@@ -18,7 +18,11 @@ public class PlayerController : HFSM_Factory<PlayerController.PlayerState, Playe
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("test, gunkidd");
+        Debug.Log("test asdasa");
     }
+
+    ////
 
   
 }

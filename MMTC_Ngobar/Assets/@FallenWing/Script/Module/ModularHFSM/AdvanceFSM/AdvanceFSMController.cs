@@ -10,6 +10,7 @@ public class AdvanceFSMController : AdvanceFSM_Factory
         AddTransition(new TransitionState(_walk, _idle, WalkToIdle));
         currentState = _idle;
         currentState.DoOnEnterState();
+        Debug.Log("");
     }
 
     public bool DoThings()
